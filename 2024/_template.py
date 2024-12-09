@@ -32,8 +32,8 @@ TEST_INPUT = [  # TODO: Replace with the test input.
 TEST_SOLUTION = -1  # TODO: Replace with the solution for the test input.
 
 
-def calculate_answer(input_values: str) -> None:
-    return
+def calculate_answer(input_values: list[str]) -> int:
+    return -1
 
 
 def main() -> None:

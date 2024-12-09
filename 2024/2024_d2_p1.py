@@ -33,7 +33,7 @@
 # ALGORITHM
 # 1. ...
 
-# SOLUTIONS:
+# SOLUTION:
 # ...
 
 import sys
@@ -46,13 +46,9 @@ from utils import utils
 
 YEAR = 2024
 DAY = 2
-# MODE: Literal["Dev", "Test", "Solve"] = "Dev"
-MODE: Literal["Dev", "Test", "Solve"] = "Test"
-# MODE: Literal["Dev", "Test", "Solve"] = "Solve"
+MODE: Literal["Test", "Solve"] = "Test"
+# MODE: Literal["Test", "Solve"] = "Solve"
 
-DEV_INPUT = [
-    "",
-]
 
 # Official sample input:
 TEST_INPUT = [
@@ -66,20 +62,18 @@ TEST_INPUT = [
 TEST_SOLUTION = 2
 
 
-def do_something(input_values: str) -> None:
-    return
+def calculate_answer(input_values: list[str]) -> int:
+    return -1
 
 
 def main() -> None:
     match MODE:
-        case "Dev":
-            input_values = DEV_INPUT
         case "Test":
             input_values = TEST_INPUT
         case "Solve":
             input_values = utils.load_input(YEAR, DAY)
 
-    utils.report_solution(MODE, TEST_SOLUTION, do_something(input_values))
+    utils.report_solution(MODE, TEST_SOLUTION, calculate_answer(input_values))
 
 
 if __name__ == "__main__":

@@ -69,7 +69,7 @@ TEST_INPUT = [
 TEST_SOLUTION = 11
 
 
-def split_input_into_lists(input: str) -> tuple[list[str], list[str]]:
+def split_input_into_lists(input: list[str]) -> tuple[list[str], list[str]]:
     left_list, right_list = [], []
     for row in input:
         left, right = row.split()
@@ -79,20 +79,20 @@ def split_input_into_lists(input: str) -> tuple[list[str], list[str]]:
 
 
 def convert_lists(left: list[str], right: list[str]) -> tuple[list[str], list[str]]:
-    left = list(map(int, left))
-    left = np.array(left)
-    right = list(map(int, right))
-    right = np.array(right)
+    left = list(map(int, left))  # type: ignore
+    left = np.array(left)  # type: ignore
+    right = list(map(int, right))  # type: ignore
+    right = np.array(right)  # type: ignore
     return left, right
 
 
-def find_differences(input_values: str) -> int:
+def find_differences(input_values: list[str]) -> int:
     left, right = split_input_into_lists(input_values)
     left, right = convert_lists(left, right)
     sum_diffs = 0
     left.sort()
     right.sort()
-    sum_diffs = (abs(left - right)).sum()
+    sum_diffs = (abs(left - right)).sum()  # type: ignore
     return sum_diffs
 
 
