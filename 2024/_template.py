@@ -8,8 +8,8 @@
 # ALGORITHM
 # 1. ...
 
-# SOLUTIONS:
-# ...
+# SOLUTION:
+#
 
 import sys
 from pathlib import Path
@@ -21,13 +21,9 @@ from utils import utils
 
 YEAR = 2024
 DAY = 1  # TODO: Replace with the correct day number.
-# MODE: Literal["Dev", "Test", "Solve"] = "Dev"
-MODE: Literal["Dev", "Test", "Solve"] = "Test"
-# MODE: Literal["Dev", "Test", "Solve"] = "Solve"
+MODE: Literal["Test", "Solve"] = "Test"
+# MODE: Literal["Test", "Solve"] = "Solve"
 
-DEV_INPUT = [
-    "",
-]
 
 # Official sample input:
 TEST_INPUT = [  # TODO: Replace with the test input.
@@ -36,20 +32,18 @@ TEST_INPUT = [  # TODO: Replace with the test input.
 TEST_SOLUTION = -1  # TODO: Replace with the solution for the test input.
 
 
-def do_something() -> None:
+def calculate_answer(input_values: str) -> None:
     return
 
 
 def main() -> None:
     match MODE:
-        case "Dev":
-            input_values = DEV_INPUT
         case "Test":
             input_values = TEST_INPUT
         case "Solve":
             input_values = utils.load_input(YEAR, DAY)
 
-    utils.report_solution(MODE, TEST_SOLUTION, do_something)
+    utils.report_solution(MODE, TEST_SOLUTION, calculate_answer(input_values))
 
 
 if __name__ == "__main__":
