@@ -1,4 +1,8 @@
+import logging
 from typing import Literal
+
+logging.basicConfig(level=logging.INFO, format="%(message)s")
+
 
 RED = "\033[91m"
 GREEN = "\033[92m"
@@ -8,8 +12,9 @@ DEFAULT = "\033[0m"
 
 
 def load_input(year: int, day: int) -> list:
-    with open(f"./inputs/{year}_d{day}.txt") as f:
+    with open(f"./{year}/inputs/{year}_d{day}.txt") as f:
         actual_input = f.readlines()
+    logging.info(f"Read input of length: {len(actual_input)}")
     return actual_input
 
 
